@@ -21,14 +21,15 @@ class WordsFinder:
         dict = {}
         for i, g in self.get_all_words().items():
             if word.lower() in g:
-                dict.update({self.file_names: g + 1})
+                dict [i] = g.index(word.lower()) + 1
         return dict
 
     def count(self, word):
         dict = {}
         for i, g in self.get_all_words().items():
             if word.lower() in g:
-                dict.update({self.file_names: g + 1})
+                dict[i] = g.count(word.lower())
+                # dict.update({self.file_names: g + 1})
         return dict
 
 
